@@ -1,8 +1,4 @@
-package edu.cs61b.strings;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+package edu.cs61b.class1.Objects;
 
 /**
  * @author arpitm
