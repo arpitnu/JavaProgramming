@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.cs61b.class3.IterationsAndArrays;
+package edu.playground;
 
 /**
  * @author arpitm
