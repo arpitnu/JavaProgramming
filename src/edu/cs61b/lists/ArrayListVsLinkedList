@@ -1,0 +1,6 @@
+Advantages of LinkedLists:
+1. Inserting item into middle of a linked list takes constant time, if you have a reference to the previous node.
+2. List can keep growing until the memory runs out.
+
+Disadvantage:
+1. Finding the nth item of a linked list takes time proportional to n. Start at the head, walk n-1 nodes.

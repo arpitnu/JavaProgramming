@@ -1,4 +1,4 @@
-package edu.cs61b.class1.Objects;
+package edu.cs61b.Objects;
 
 /**
  * @author arpitm

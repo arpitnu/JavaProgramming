@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.cs61b.class1.Objects;
+package edu.cs61b.Objects;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

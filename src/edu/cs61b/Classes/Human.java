@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.cs61b.class2.Classes;
+package edu.cs61b.Classes;
 
 /**
  * @author arpitm
