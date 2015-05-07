@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.cs61b.lists;
+package edu.cs61b.Lists;
 
 /**
  * @author arpitm
