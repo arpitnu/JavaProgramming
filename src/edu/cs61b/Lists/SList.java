@@ -3,10 +3,20 @@
  */
 package edu.cs61b.Lists;
 
-/**
+/*
  * @author arpitm
  * 
- * The SList class.
+ * The SList Abstract data type.
+ * 
+ * This data type can enforce 2 invariants:
+ * 1. "size" is always correct. i.e, we want the 'size' field 
+ *    in the class to correctly represent the number of nodes.
+ * 2. An SList is never circularly linked.
+ * 
+ * Both the above goals are accomplished because only SList methods
+ * can change the list. SList ensures this by:
+ * 1. The fields of SList (head & size) are 'private'.
+ * 2. No method of SList returns an SListNode.
  *
  */
 public class SList {
