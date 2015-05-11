@@ -1,7 +1,7 @@
 package edu.cs61b.hw3;
 
 /**
- *  TestHelper.java 
+ *  SListTestHelper.java 
  */
 
 /**
@@ -9,7 +9,7 @@ package edu.cs61b.hw3;
  * invariants in any program.
  **/
 
-public class TestHelper {
+class SListTestHelper {
 
 	/**
 	 * verify() checks an invariant and prints an error message if it fails. If

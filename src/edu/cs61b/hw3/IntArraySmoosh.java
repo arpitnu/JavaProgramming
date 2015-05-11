@@ -62,7 +62,7 @@ public class IntArraySmoosh {
 		smoosh(test1);
 		result = stringInts(test1);
 		System.out.println(result);
-		TestHelper
+		SListTestHelper
 				.verify(result
 						.equals("[  3  7  4  5  2  0  8  5  -1  -1  -1  -1  -1  -1  ]"),
 						"BAD SMOOSH!!!  No cookie.");
@@ -72,7 +72,7 @@ public class IntArraySmoosh {
 		smoosh(test2);
 		result = stringInts(test2);
 		System.out.println(result);
-		TestHelper
+		SListTestHelper
 				.verify(result
 						.equals("[  6  3  6  3  6  3  -1  -1  -1  -1  -1  -1  -1  -1  -1  ]"),
 						"BAD SMOOSH!!!  No cookie.");
@@ -82,7 +82,7 @@ public class IntArraySmoosh {
 		smoosh(test3);
 		result = stringInts(test3);
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  4  -1  -1  -1  -1  ]"),
+		SListTestHelper.verify(result.equals("[  4  -1  -1  -1  -1  ]"),
 				"BAD SMOOSH!!!  No cookie.");
 
 		int[] test4 = { 0, 1, 2, 3, 4, 5, 6 };
@@ -90,7 +90,7 @@ public class IntArraySmoosh {
 		smoosh(test4);
 		result = stringInts(test4);
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
+		SListTestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
 				"BAD SMOOSH!!!  No cookie.");
 
 		System.out.println("\nLet's squish linked lists!\n");
@@ -104,7 +104,7 @@ public class IntArraySmoosh {
 		list5.squish();
 		result = list5.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  3  7  4  5  2  0  8  5  ]"),
+		SListTestHelper.verify(result.equals("[  3  7  4  5  2  0  8  5  ]"),
 				"BAD SQUISH!!!  No biscuit.");
 
 		int[] test6 = { 6, 6, 6, 6, 6, 3, 6, 3, 6, 3, 3, 3, 3, 3, 3 };
@@ -116,7 +116,7 @@ public class IntArraySmoosh {
 		list6.squish();
 		result = list6.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  6  3  6  3  6  3  ]"),
+		SListTestHelper.verify(result.equals("[  6  3  6  3  6  3  ]"),
 				"BAD SQUISH!!!  No biscuit.");
 
 		int[] test7 = { 4, 4, 4, 4, 4 };
@@ -128,7 +128,7 @@ public class IntArraySmoosh {
 		list7.squish();
 		result = list7.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  4  ]"),
+		SListTestHelper.verify(result.equals("[  4  ]"),
 				"BAD SQUISH!!!  No biscuit.");
 
 		int[] test8 = { 0, 1, 2, 3, 4, 5, 6 };
@@ -140,7 +140,7 @@ public class IntArraySmoosh {
 		list8.squish();
 		result = list8.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
+		SListTestHelper.verify(result.equals("[  0  1  2  3  4  5  6  ]"),
 				"BAD SQUISH!!!  No biscuit.");
 
 		SList list9 = new SList();
@@ -148,7 +148,7 @@ public class IntArraySmoosh {
 		list9.squish();
 		result = list9.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  ]"), "BAD SQUISH!!!  No biscuit.");
+		SListTestHelper.verify(result.equals("[  ]"), "BAD SQUISH!!!  No biscuit.");
 
 		System.out.println("\nLet's twin linked lists!\n");
 
@@ -156,7 +156,7 @@ public class IntArraySmoosh {
 		list6.twin();
 		result = list6.toString();
 		System.out.println(result);
-		TestHelper.verify(
+		SListTestHelper.verify(
 				result.equals("[  6  6  3  3  6  6  3  3  6  6  3  3  ]"),
 				"BAD TWIN!!!  No gravy.");
 
@@ -164,14 +164,14 @@ public class IntArraySmoosh {
 		list7.twin();
 		result = list7.toString();
 		System.out.println(result);
-		TestHelper
+		SListTestHelper
 				.verify(result.equals("[  4  4  ]"), "BAD TWIN!!!  No gravy.");
 
 		System.out.println("twinning " + list9.toString() + ":");
 		list9.twin();
 		result = list9.toString();
 		System.out.println(result);
-		TestHelper.verify(result.equals("[  ]"), "BAD TWIN!!!  No gravy.");
+		SListTestHelper.verify(result.equals("[  ]"), "BAD TWIN!!!  No gravy.");
 	}
 
 }

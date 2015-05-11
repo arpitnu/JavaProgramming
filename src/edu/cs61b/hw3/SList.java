@@ -24,6 +24,21 @@ public class SList {
 	}
 
 	/**
+	 * newNode() calls the SListNode constructor. Use this class to allocate new
+	 * SListNodes rather than calling the SListNode constructor directly. That
+	 * way, only this method needs to be overridden if a subclass of SList wants
+	 * to use a different kind of node.
+	 * 
+	 * @param item
+	 *            the item to store in the node.
+	 * @param next
+	 *            the node following this node.
+	 */
+	protected SListNode newNode(Object item, SListNode next) {
+		return new SListNode(item, next);
+	}
+
+	/**
 	 * isEmpty() indicates whether the list is empty.
 	 * 
 	 * @return true if the list is empty, false otherwise.
@@ -180,6 +195,17 @@ public class SList {
 	}
 
 	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws Exception {
+		testEmpty();
+		testAfterInsertFront();
+		testAfterInsertEnd();
+		testAfterSquish();
+		testAfterTwin();
+	}
+
+	/**
 	 * testEmpty() tests toString(), isEmpty(), length(), insertFront(), and
 	 * insertEnd() on an empty list. Prints summary information of the tests and
 	 * halts the program if errors are detected.
@@ -191,28 +217,27 @@ public class SList {
 		System.out.println();
 		System.out.println("Here is a list after construction: "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  ]"),
 				"toString on newly constructed list failed");
-
 		System.out
 				.println("isEmpty() should be true. It is: " + lst1.isEmpty());
-		TestHelper.verify(lst1.isEmpty() == true,
+		SListTestHelper.verify(lst1.isEmpty() == true,
 				"isEmpty() on newly constructed list failed");
 
 		System.out.println("length() should be 0. It is: " + lst1.length());
-		TestHelper.verify(lst1.length() == 0,
+		SListTestHelper.verify(lst1.length() == 0,
 				"length on newly constructed list failed");
 		lst1.insertFront(new Integer(3));
 		System.out
 				.println("Here is a list after insertFront(3) to an empty list: "
 						+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  3  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  3  ]"),
 				"InsertFront on empty list failed");
 		lst2.insertEnd(new Integer(5));
 		System.out
 				.println("Here is a list after insertEnd(5) on an empty list: "
 						+ lst2.toString());
-		TestHelper.verify(lst2.toString().equals("[  5  ]"),
+		SListTestHelper.verify(lst2.toString().equals("[  5  ]"),
 				"insertEnd on empty list failed");
 	}
 
@@ -230,19 +255,19 @@ public class SList {
 		System.out.println();
 		System.out.println("Here is a list after insertFront 3, 2, 1: "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  1  2  3  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  1  2  3  ]"),
 				"InsertFronts on non-empty list failed");
 		System.out.println("isEmpty() should be false. It is: "
 				+ lst1.isEmpty());
-		TestHelper.verify(lst1.isEmpty() == false,
+		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertFront failed");
 		System.out.println("length() should be 3. It is: " + lst1.length());
-		TestHelper.verify(lst1.length() == 3,
+		SListTestHelper.verify(lst1.length() == 3,
 				"length() after insertFront failed");
 		lst1.insertEnd(new Integer(4));
 		System.out.println("Here is the same list after insertEnd(4): "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  1  2  3  4  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  1  2  3  4  ]"),
 				"insertEnd on non-empty list failed");
 	}
 
@@ -261,26 +286,15 @@ public class SList {
 				+ lst1.toString());
 		System.out.println("isEmpty() should be false. It is: "
 				+ lst1.isEmpty());
-		TestHelper.verify(lst1.isEmpty() == false,
+		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 2. It is: " + lst1.length());
-		TestHelper.verify(lst1.length() == 2, "length() after insertEndfailed");
+		SListTestHelper.verify(lst1.length() == 2, "length() after insertEndfailed");
 		lst1.insertFront(new Integer(5));
 		System.out.println("Here is the same list after insertFront(5): "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  5  6  7  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  5  6  7  ]"),
 				"insertFront after insertEnd failed");
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) throws Exception {
-		testEmpty();
-		testAfterInsertFront();
-		testAfterInsertEnd();
-		testAfterSquish();
-		testAfterTwin();
 	}
 
 	private static void testAfterTwin() {
@@ -294,16 +308,15 @@ public class SList {
 				+ lst1.toString());
 		System.out.println("isEmpty() should be false. It is: "
 				+ lst1.isEmpty());
-		TestHelper.verify(lst1.isEmpty() == false,
+		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 4. It is: " + lst1.length());
-		TestHelper
-				.verify(lst1.length() == 4, "length() after insertEndfailed");
+		SListTestHelper.verify(lst1.length() == 4, "length() after insertEndfailed");
 		lst1.twin();
 		System.out.println("Here is the same list after twin(): "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  0  0  1  1  2  2  3  3  ]"),
-				"twin() failed");
+		SListTestHelper.verify(lst1.toString()
+				.equals("[  0  0  1  1  2  2  3  3  ]"), "twin() failed");
 	}
 
 	private static void testAfterSquish() {
@@ -327,15 +340,15 @@ public class SList {
 				+ lst1.toString());
 		System.out.println("isEmpty() should be false. It is: "
 				+ lst1.isEmpty());
-		TestHelper.verify(lst1.isEmpty() == false,
+		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 14. It is: " + lst1.length());
-		TestHelper
+		SListTestHelper
 				.verify(lst1.length() == 14, "length() after insertEndfailed");
 		lst1.squish();
 		System.out.println("Here is the same list after squish(): "
 				+ lst1.toString());
-		TestHelper.verify(lst1.toString().equals("[  0  1  2  3  4  0  5  ]"),
+		SListTestHelper.verify(lst1.toString().equals("[  0  1  2  3  4  0  5  ]"),
 				"squish() failed");
 	}
 
