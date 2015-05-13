@@ -44,16 +44,8 @@ public class SList {
 		return size;
 	}
 
-	public void setSize(int size) {
-		this.size = size;
-	}
-
 	public SListNode getHead() {
 		return head;
-	}
-
-	public void setHead(SListNode head) {
-		this.head = head;
 	}
 
 }

@@ -28,7 +28,27 @@ public class IntArraySmoosh {
 	 **/
 
 	public static void smoosh(int[] ints) {
-		
+		int len = ints.length;
+
+		if (len == 0) {
+			return;
+		}
+
+		int i = 1;
+		int j = 0;
+
+		for (; i < len; i++) {
+			if (ints[j] != ints[i]) {
+				j++;
+				ints[j] = ints[i];
+			}
+		}
+
+		// Update all indexes after the current position of 'j' to the end of
+		// the array to -1
+		for (i = j + 1; i < len; i++) {
+			ints[i] = -1;
+		}
 	}
 
 	/**
@@ -148,7 +168,8 @@ public class IntArraySmoosh {
 		list9.squish();
 		result = list9.toString();
 		System.out.println(result);
-		SListTestHelper.verify(result.equals("[  ]"), "BAD SQUISH!!!  No biscuit.");
+		SListTestHelper.verify(result.equals("[  ]"),
+				"BAD SQUISH!!!  No biscuit.");
 
 		System.out.println("\nLet's twin linked lists!\n");
 
@@ -164,8 +185,8 @@ public class IntArraySmoosh {
 		list7.twin();
 		result = list7.toString();
 		System.out.println(result);
-		SListTestHelper
-				.verify(result.equals("[  4  4  ]"), "BAD TWIN!!!  No gravy.");
+		SListTestHelper.verify(result.equals("[  4  4  ]"),
+				"BAD TWIN!!!  No gravy.");
 
 		System.out.println("twinning " + list9.toString() + ":");
 		list9.twin();

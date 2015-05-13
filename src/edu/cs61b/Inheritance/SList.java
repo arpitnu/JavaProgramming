@@ -1,7 +1,7 @@
 /**
  * SList.java
  */
-package edu.cs61b.hw3;
+package edu.cs61b.Inheritance;
 
 /**
  * The SList class is a singly-linked implementation of the linked list
@@ -12,8 +12,8 @@ package edu.cs61b.hw3;
  *
  */
 class SList {
-	private SListNode head;
-	private int size;
+	protected SListNode head;
+	protected int size;
 
 	/**
 	 * SList() constructs an empty list

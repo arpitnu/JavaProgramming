@@ -6,7 +6,7 @@ package edu.cs61b.hw5;
  *  An SListNode is a mutable node in an SList (singly-linked list).
  **/
 
-public class SListNode extends ListNode {
+class SListNode extends ListNode {
 
   /**
    *  (inherited)  item references the item stored in the current node.

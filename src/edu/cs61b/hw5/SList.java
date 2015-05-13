@@ -9,7 +9,7 @@ package edu.cs61b.hw5;
  *  DO NOT CHANGE THIS FILE.
  **/
 
-public class SList extends List {
+class SList extends List {
 
   /**
    *  (inherited)  size is the number of items in the list.

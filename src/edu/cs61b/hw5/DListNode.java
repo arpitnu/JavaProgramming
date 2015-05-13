@@ -6,7 +6,7 @@ package edu.cs61b.hw5;
  *  A DListNode is a mutable node in a DList (doubly-linked list).
  **/
 
-public class DListNode extends ListNode {
+class DListNode extends ListNode {
 
   /**
    *  (inherited)  item references the item stored in the current node.

@@ -16,10 +16,30 @@ class LockDList extends DList {
 		super();
 	}
 
+	/**
+	 * newNode() calls the DListNode constructor. Use this class to allocate new
+	 * LockDListNodes rather than calling the LockDListNode constructor
+	 * directly. That way, only this method needs to be overridden if a subclass
+	 * of DList wants to use a different kind of node.
+	 * 
+	 * @param item
+	 *            the item to store in the node.
+	 * @param prev
+	 *            the node previous to this node.
+	 * @param next
+	 *            the node following this node.
+	 */
+	@Override
 	protected DListNode newNode(Object item, DListNode prev, DListNode next) {
 		return new LockDListNode(item, prev, next);
 	}
 
+	/**
+	 * Function locks the node in the DList.
+	 * 
+	 * @param node
+	 *            the node that needs to be locked
+	 */
 	public void lockNode(DListNode node) {
 		((LockDListNode) node).isLocked = true;
 	}
@@ -29,13 +49,16 @@ class LockDList extends DList {
 		String result = "[  ";
 		DListNode current = this.head.next;
 		while (current != this.head) {
-			result = result + current.item + " " + ((LockDListNode)current).isLocked + "  ";
+			result = result + current.item + " "
+					+ ((LockDListNode) current).isLocked + "  ";
 			current = current.next;
 		}
 		return result + "]";
 	}
 
 	/**
+	 * main() calls the test functions
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
