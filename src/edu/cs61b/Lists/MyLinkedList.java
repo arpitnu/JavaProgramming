@@ -9,7 +9,7 @@ package edu.cs61b.Lists;
  *         Recursive DataType.
  *
  */
-public class MyLinkedList {
+class MyLinkedList {
 
 	static class MyIntNode {
 		public int data;

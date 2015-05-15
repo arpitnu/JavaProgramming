@@ -9,7 +9,7 @@ package edu.cs61b.Lists;
  * Singly LinkedList Node
  *
  */
-public class SListNode {
+class SListNode {
 	public Object item;
 	public SListNode next;
 	

@@ -33,11 +33,20 @@ public class ShuffleIntArray {
 
 		int[] ints5 = { 11, 1, -10, -2, -5, -4 };
 		printAfterShuffle(ints5);
-		
+
 		int[] ints6 = { 1 };
 		printAfterShuffle(ints6);
+
+		int[] ints7 = { 1, -1, 2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8,
+				9, -9, 10, -10, 11, -11, 12, -12, 13, -13, 14, -14, 15, -15,
+				16, -16, 17, -17, 18, -18, 19, -19, 20, -20 };
+		printAfterShuffle(ints7);
 	}
 
+	/**
+	 * Function 
+	 * @param ints
+	 */
 	private static void printAfterShuffle(int[] ints) {
 		System.out.print("Input Array: ");
 		printArray(ints);
@@ -68,15 +77,15 @@ public class ShuffleIntArray {
 			nNeg++;
 		}
 
-		for (int i = 1; i < len; i++) {
-			if (ints[i] < 0) {
-				int j = i;
+		for (int intsIndex = 1; intsIndex < len; intsIndex++) {
+			if (ints[intsIndex] < 0) {
+				int nextNeg = intsIndex;
 
-				while (j > nNeg) {
-					ints[j - 1] += ints[j];
-					ints[j] = ints[j - 1] - ints[j];
-					ints[j - 1] -= ints[j];
-					j--;
+				while (nextNeg > nNeg) {
+					ints[nextNeg - 1] += ints[nextNeg];
+					ints[nextNeg] = ints[nextNeg - 1] - ints[nextNeg];
+					ints[nextNeg - 1] -= ints[nextNeg];
+					nextNeg--;
 				}
 
 				nNeg++;

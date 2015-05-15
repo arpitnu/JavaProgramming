@@ -175,6 +175,35 @@ class SList {
 	}
 
 	/**
+	 * reverse() function reverses an SList in its place using recursion.
+	 * 
+	 * For example if the input list is [ 1 2 3 4 5 ], the output list is [ 5 4
+	 * 3 2 1 ].
+	 * 
+	 */
+	public void reverse() {
+		if ((this.head == null) || this.isEmpty()) {
+			return;
+		}
+
+		SListNode prevNode = null;
+		SListNode currNode = this.head;
+		SListNode nextNode = currNode.next;
+		
+		this.head = null;
+		
+		while(nextNode != null) {
+			currNode.next = prevNode;
+			prevNode = currNode;
+			currNode = nextNode;
+			nextNode = currNode.next;
+		}
+		
+		currNode.next = prevNode;
+		this.head = currNode;
+	}
+
+	/**
 	 * toString() converts the list to a String.
 	 * 
 	 * @return a String representation of the list.
@@ -183,7 +212,7 @@ class SList {
 		Object obj;
 		String result = "[  ";
 
-		SListNode cur = head;
+		SListNode cur = this.head;
 
 		while (cur != null) {
 			obj = cur.item;
@@ -203,6 +232,36 @@ class SList {
 		testAfterInsertEnd();
 		testAfterSquish();
 		testAfterTwin();
+		testAfterReverse();
+	}
+
+	/**
+	 * testAfterReverse() tests the reverse() method of SList. It prints
+	 * information about the tests and halts the program if errors are detected.
+	 */
+	private static void testAfterReverse() {
+		SList lst = new SList();
+		lst.insertEnd(1);
+		lst.insertEnd(2);
+		lst.insertEnd(3);
+		lst.insertEnd(4);
+		lst.insertEnd(5);
+		lst.insertEnd(6);
+		lst.insertEnd(7);
+		System.out.println();
+		System.out.println("Here is a list after construction: "
+				+ lst.toString());
+		SListTestHelper.verify(lst.toString().equals("[  1  2  3  4  5  6  7  ]"),
+				"toString on newly constructed list failed");
+		System.out
+				.println("isEmpty() should be false. It is: " + lst.isEmpty());
+		SListTestHelper.verify(lst.isEmpty() == false,
+				"isEmpty() on newly constructed list failed");
+		lst.reverse();
+		System.out.println("Here is a list after reversal: "
+				+ lst.toString());
+		SListTestHelper.verify(lst.toString().equals("[  7  6  5  4  3  2  1  ]"),
+				"toString on newly constructed list failed");
 	}
 
 	/**
@@ -289,7 +348,8 @@ class SList {
 		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 2. It is: " + lst1.length());
-		SListTestHelper.verify(lst1.length() == 2, "length() after insertEndfailed");
+		SListTestHelper.verify(lst1.length() == 2,
+				"length() after insertEndfailed");
 		lst1.insertFront(new Integer(5));
 		System.out.println("Here is the same list after insertFront(5): "
 				+ lst1.toString());
@@ -311,12 +371,14 @@ class SList {
 		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 4. It is: " + lst1.length());
-		SListTestHelper.verify(lst1.length() == 4, "length() after insertEndfailed");
+		SListTestHelper.verify(lst1.length() == 4,
+				"length() after insertEndfailed");
 		lst1.twin();
 		System.out.println("Here is the same list after twin(): "
 				+ lst1.toString());
-		SListTestHelper.verify(lst1.toString()
-				.equals("[  0  0  1  1  2  2  3  3  ]"), "twin() failed");
+		SListTestHelper.verify(
+				lst1.toString().equals("[  0  0  1  1  2  2  3  3  ]"),
+				"twin() failed");
 	}
 
 	private static void testAfterSquish() {
@@ -343,12 +405,13 @@ class SList {
 		SListTestHelper.verify(lst1.isEmpty() == false,
 				"isEmpty() after insertEnd failed");
 		System.out.println("length() should be 14. It is: " + lst1.length());
-		SListTestHelper
-				.verify(lst1.length() == 14, "length() after insertEndfailed");
+		SListTestHelper.verify(lst1.length() == 14,
+				"length() after insertEndfailed");
 		lst1.squish();
 		System.out.println("Here is the same list after squish(): "
 				+ lst1.toString());
-		SListTestHelper.verify(lst1.toString().equals("[  0  1  2  3  4  0  5  ]"),
+		SListTestHelper.verify(
+				lst1.toString().equals("[  0  1  2  3  4  0  5  ]"),
 				"squish() failed");
 	}
 

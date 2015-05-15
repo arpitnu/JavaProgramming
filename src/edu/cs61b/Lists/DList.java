@@ -29,7 +29,7 @@ package edu.cs61b.Lists;
  * 
  *
  */
-public class DList {
+class DList {
 	private DListNode head;
 	private DListNode sentinel;
 	private long size;

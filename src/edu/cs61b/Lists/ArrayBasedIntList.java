@@ -15,7 +15,7 @@ package edu.cs61b.Lists;
  * 2. An array has fixed length.
  *
  */
-public class ArrayBasedIntList {
+class ArrayBasedIntList {
 	int[] a;
 	int lastItem;
 

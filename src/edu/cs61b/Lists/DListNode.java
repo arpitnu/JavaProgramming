@@ -7,7 +7,7 @@ package edu.cs61b.Lists;
  * @author arpitm
  *
  */
-public class DListNode {
+class DListNode {
 	Object item;
 	DListNode next;
 	DListNode previous;

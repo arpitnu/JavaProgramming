@@ -19,7 +19,7 @@ package edu.cs61b.Lists;
  * 2. No method of SList returns an SListNode.
  *
  */
-public class SList {
+class SList {
 	private SListNode head;
 	private int size;
 
