@@ -44,7 +44,8 @@ public class ShuffleIntArray {
 	}
 
 	/**
-	 * Function 
+	 * Function
+	 * 
 	 * @param ints
 	 */
 	private static void printAfterShuffle(int[] ints) {
@@ -57,9 +58,9 @@ public class ShuffleIntArray {
 	}
 
 	/**
-	 * Function sorts the integer array in such a way that all negative integers
-	 * are bought to the left side of the array in order and all the positive
-	 * integers are bought to the right side.
+	 * Function shuffles the integer array in such a way that all negative
+	 * integers are bought to the left side of the array in order and all the
+	 * positive integers are bought to the right side IN ORDER.
 	 * 
 	 * @param ints
 	 * @return sorted array of integers

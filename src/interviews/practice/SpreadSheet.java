@@ -1,4 +1,4 @@
-package edu.random.practice;
+package interviews.practice;
 
 public class SpreadSheet {
 

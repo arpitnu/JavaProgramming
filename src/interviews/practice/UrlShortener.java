@@ -1,7 +1,7 @@
 /**
  * 
  */
-package edu.random.practice;
+package interviews.practice;
 
 /**
  * @author arpitm
