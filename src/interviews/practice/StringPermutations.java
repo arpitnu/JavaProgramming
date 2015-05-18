@@ -54,6 +54,9 @@ public class StringPermutations {
 
 		str = "a b b a";
 		printStringPermutations(str);
+		
+		str = "1234";
+		printStringPermutations(str);
 	}
 
 	private static void printStringPermutations(String str) {
@@ -73,7 +76,7 @@ public class StringPermutations {
 
 	private static void stringPermutation(String str, int strLen, int charIndex) {
 		// Return if currIndex = string length
-		if (charIndex == strLen) {
+		if (charIndex> strLen) {
 			return;
 		} else {
 			int i = charIndex + 1;
