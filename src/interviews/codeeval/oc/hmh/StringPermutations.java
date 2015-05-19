@@ -52,30 +52,6 @@ public class StringPermutations {
 			Arrays.sort(permChars);
 
 			permute(permChars);
-
-			// int len = permChars.length;
-			// int nPermutations = factorial(len - 1);
-			// // System.out.println(nPermutations);
-			//
-			// // Define list of strings to store app permutations
-			// ArrayList<String> allPermutations = new ArrayList<String>();
-			//
-			// getPermutations(new String(permChars), 0, permChars.length,
-			// allPermutations);
-			//
-			// // Print all permutations of the string in a comma separated list
-			// // form
-			// StringBuilder sb = new StringBuilder();
-			//
-			// for (int i = 0; i < allPermutations.size(); i++) {
-			// if (i == 0) {
-			// sb.append(allPermutations.get(i));
-			// } else {
-			// sb.append("," + allPermutations.get(i));
-			// }
-			// }
-			//
-			// System.out.println(sb.toString());
 		}
 
 		// Close buffer
