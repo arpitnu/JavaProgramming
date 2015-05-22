@@ -1,7 +1,7 @@
 /**
  * 
  */
-package interviews.codeeval.easy.challenge2;
+package interviews.codeeval.easy.SumOf100Primes;
 
 /**
  * @author arpitm

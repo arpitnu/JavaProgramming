@@ -1,7 +1,7 @@
 /**
  * 
  */
-package interviews.codeeval.easy.challenge4;
+package interviews.codeeval.easy.PrintOdds1To99;
 
 /**
  * @author arpitm
@@ -9,7 +9,7 @@ package interviews.codeeval.easy.challenge4;
  *         Program prints all odd numbers from 1 to 99
  *
  */
-public class Challenge4 {
+public class PrintOdds1To99 {
 
 	/**
 	 * @param args
