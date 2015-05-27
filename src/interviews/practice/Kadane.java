@@ -1,4 +1,4 @@
-package interviews.wayfair;
+package interviews.practice;
 
 /*
 ***For this question, please complete all work within the pad. Do NOT copy in completed code.***

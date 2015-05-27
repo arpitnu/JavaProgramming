@@ -1,7 +1,7 @@
 /**
  * 
  */
-package interviews.epic;
+package interviews.practice;
 
 /**
  * @author arpitm

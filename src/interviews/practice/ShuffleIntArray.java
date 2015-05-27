@@ -1,7 +1,7 @@
 /**
  * 
  */
-package interviews.wayfair;
+package interviews.practice;
 
 /**
  * @author arpitm
