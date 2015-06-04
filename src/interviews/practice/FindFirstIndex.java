@@ -8,7 +8,7 @@ import edu.playground.DSPrinter;
 /**
  * @author arpitm
  * 
- *         Program finds the 1st index of an integer in a sorted array of
+ *         Program finds the first index of an integer in a sorted array of
  *         integers allowing duplicates.
  * 
  *         Approach: Binary Search But traditional binary search only returns

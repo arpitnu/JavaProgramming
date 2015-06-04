@@ -1,6 +1,3 @@
-/**
- * 
- */
 package interviews.practice;
 
 /**
@@ -19,7 +16,7 @@ public class ReverseString {
 
 	private static void printReverseString(String str) {
 		System.out.println("Input string: " + str);
-		String reversedStr = reverseStringInPlcae(str, 0, str.length() - 1);
+		String reversedStr = reverseStringRecursion(str, 0, str.length() - 1);
 		System.out.println("Reversed string: " + reversedStr);
 	}
 
@@ -34,12 +31,12 @@ public class ReverseString {
 		return reversedStr;
 	}
 
-	private static String reverseStringInPlcae(String str, int start, int end) {
+	private static String reverseStringRecursion(String str, int start, int end) {
 		if (start == end) {
 			return str;
 		} else {
 			char firstChar = str.charAt(0);
-			return (reverseStringInPlcae(str.substring(1, end), 0,
+			return (reverseStringRecursion(str.substring(1, end), 0,
 					end - 1) + firstChar);
 		}
 	}

@@ -16,9 +16,6 @@ import java.util.List;
  */
 class BTRootToLeafSum {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		BTreeNode root = new BTreeNode(10, new BTreeNode(-5,
 				new BTreeNode(-10), new BTreeNode(7)), new BTreeNode(20,

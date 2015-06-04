@@ -29,32 +29,31 @@ package interviews.practice.trees;
  * 
  *
  */
-class TreeTraversal {
+class RecursiveBTreeTraversal {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		// construct a simple tree
-		BTreeNode tree = new BTreeNode(10, new BTreeNode(15, new BTreeNode(3,
+		BTreeNode root = new BTreeNode(10, new BTreeNode(15, new BTreeNode(3,
 				new BTreeNode(5), null), new BTreeNode(6)), new BTreeNode(30,
 				null, new BTreeNode(2, new BTreeNode(9), new BTreeNode(8))));
 		
-		System.out.println("Printing tree: ");
-		tree.printBTree();
+		System.out.println("Input tree: ");
+		root.printBTree();
+		
+		System.out.println();
 		
 		System.out.print("In order traversal: ");
-		inOrderTraversal(tree);
+		inOrderTraversal(root);
 		
 		System.out.println();
 		
 		System.out.print("Pre order traversal: ");
-		preOrderTraversal(tree);
+		preOrderTraversal(root);
 		
 		System.out.println();
 		
 		System.out.print("Post order traversal: ");
-		postOrderTraversal(tree);
+		postOrderTraversal(root);
 	}
 	
 	private static void inOrderTraversal(BTreeNode node) {

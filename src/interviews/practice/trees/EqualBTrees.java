@@ -9,9 +9,6 @@ package interviews.practice.trees;
  */
 class EqualBTrees {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		BTreeNode root1 = null;
 		BTreeNode root2 = null;

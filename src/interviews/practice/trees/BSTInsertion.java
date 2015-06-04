@@ -6,9 +6,6 @@ package interviews.practice.trees;
  */
 class BSTInsertion {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		BTreeNode bst = new BTreeNode(10, new BTreeNode(-5, new BTreeNode(-10),
 				new BTreeNode(7)), new BTreeNode(20, new BTreeNode(15),
