@@ -1,7 +1,4 @@
-/**
- * 
- */
-package interviews.practice;
+package interviews.practice.trees;
 
 /**
  * @author arpitm
@@ -16,41 +13,22 @@ package interviews.practice;
  */
 public class VerifyTreeIsBST {
 
-	static class Tree {
-		public int value;
-		public Tree left;
-		public Tree right;
-
-		/**
-		 * Tree() constructor
-		 */
-		public Tree(int a) {
-			this.left = null;
-			this.right = null;
-			this.value = a;
-		}
-
-		public Tree(int a, Tree leftNode, Tree rightNode) {
-			this.left = leftNode;
-			this.right = rightNode;
-			this.value = a;
-		}
-	}
-
 	public static void main(String[] args) {
 		// construct a simple tree
-		Tree myTree1 = new Tree(4, new Tree(2, new Tree(1), new Tree(3)),
-				new Tree(6, new Tree(5), new Tree(7)));
+		BTreeNode myTree1 = new BTreeNode(4, new BTreeNode(2, new BTreeNode(1),
+				new BTreeNode(3)), new BTreeNode(6, new BTreeNode(5),
+				new BTreeNode(7)));
 		System.out.println("Is my tree BST? "
 				+ isBST(myTree1, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
-		Tree myTree2 = new Tree(2, new Tree(4, new Tree(1), new Tree(3)),
-				new Tree(6, new Tree(5), new Tree(7)));
+		BTreeNode myTree2 = new BTreeNode(2, new BTreeNode(4, new BTreeNode(1),
+				new BTreeNode(3)), new BTreeNode(6, new BTreeNode(5),
+				new BTreeNode(7)));
 		System.out.println("Is my tree BST? "
 				+ isBST(myTree2, Integer.MIN_VALUE, Integer.MAX_VALUE));
 	}
 
-	public static boolean isBST(Tree t, int small, int large) {
+	public static boolean isBST(BTreeNode t, int small, int large) {
 		if (t == null) {
 			// If no elements in the tree, we return true
 			return true;
